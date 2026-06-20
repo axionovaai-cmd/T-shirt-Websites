@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-surface: #000000;
+  --color-surface-dim: #050505;
+  --color-surface-bright: #1c1c1c;
+  --color-surface-container: #0d0d0d;
+  
+  --color-on-background: #F4F1EA;
+  --color-on-surface: #F4F1EA;
+  --color-on-surface-variant: #9C968A;
+  
+  --color-primary: #000000;
+  --color-on-primary: #F4F1EA;
+  
+  --color-secondary: #F4F1EA;
+  --color-on-secondary: #000000;
+
+  /* Technical / Accent Safety Orange / Bright Gold */
+  --color-gold: #ff9900;
+  --color-gold-hover: #E0BC6E;
+  
+  --color-tertiary: #ff9900; /* Safety Orange / Gold */
+  --color-on-tertiary: #000000;
+  
+  --color-border-hairline: #2A2A2A;
+
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* Accordion Animations */
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  /* Subtle zoom animation for Hero block */
+  --animate-subtle-zoom: subtle-zoom 20s infinite alternate;
+
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
+
+  @keyframes subtle-zoom {
+    from { transform: scale(1.0); }
+    to { transform: scale(1.05); }
+  }
+}
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #F4F1EA;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .label-caps {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .hairline-divider {
+    border-color: #2A2A2A;
+    border-width: 1px;
+  }
+}
